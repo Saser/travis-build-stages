@@ -5,7 +5,17 @@ jobs:
   include:
     - stage: "Frontend tests"
       language: node_js
+      before_install:
+        - 'echo "This happens before the frontend install step"'
+      install:
+        - 'echo "Installing leftpad"'
+        - 'npm install leftpad'
       script: node test.js
     - stage: "Backend tests"
       language: ruby
+      before_install:
+        - 'echo "This happens before the backend install step"'
+      install:
+        - 'echo "Installing nokogiri"'
+        - 'gem install nokogiri'
       script: ruby test.rb
