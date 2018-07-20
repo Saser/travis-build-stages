@@ -1,6 +1,10 @@
 env:
   global:
     - HERP=derp
+
+before_install:
+  - 'This should happen in each stage, preferrably first of all'
+
 jobs:
   include:
     - stage: "Frontend tests"
