@@ -1,3 +1,6 @@
+env:
+  global:
+    - HERP=derp
 jobs:
   include:
     - stage: "Frontend tests"
